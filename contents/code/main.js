@@ -45,7 +45,25 @@ var isMaximised = function () {
 };
 
 var SmartTileUp = function () {
-
+  if(isBottom())
+  {
+    if(isLeft())
+      workspace.slotWindowQuickTileLeft();
+    else if(isRight())
+      workspace.slotWindowQuickTileRight();
+  }
+  else if(isVerticallyMaximised())
+  {
+    if(isLeft())
+      workspace.slotWindowQuickTileTopLeft();
+    else if(isRight())
+      workspace.slotWindowQuickTileTopRight();
+  }
+  else if(isTop())
+  {
+    console.info("YUP.");
+    workspace.slotWindowMaximize();
+  }
 };
 
 var SmartTileDown = function () {
