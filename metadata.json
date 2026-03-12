@@ -1,0 +1,24 @@
+{
+    "KPlugin": {
+        "Id": "com.github.geargobllin.kwin-smart-tile-windows-11",
+
+        "Name": "Smart Tile - Windows 11",
+        "Description": "Kwin script that aims to replicate the automatic tiling behaviour seen within Windows 11.",
+        "Version": "0.1.0",
+        "Website": "https://github.com/geargobllin/kwin-smart-tile-windows-11",
+        
+        "Icon": "references-system-windows-script-test",
+        "License": "GPLv3",
+
+        "Authors": [
+            {
+                "Name": "Gear Goblin",
+                "Email": "zecheeseking@gmail.com"
+            }
+        ],
+        "EnabledByDefault": true
+    },
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js",
+    "KPackageStructure": "KWin/Script"
+}
