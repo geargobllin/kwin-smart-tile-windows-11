@@ -1,3 +1,8 @@
+var untiledX = 0;
+var untiledY = 0;
+var untiledWidth = 0;
+var untiledHeight = 0;
+
 var isLeft = function() {
   tileGeometry = workspace.activeWindow.tile?.relativeGeometry;
   return tileGeometry.x === 0 && tileGeometry.width === 0.5;
