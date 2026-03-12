@@ -36,7 +36,12 @@ var isVerticallyMaximised = function () {
       workspace.currentDesktop
     );
   clientGeometry = workspace.activeWindow.frameGeometry;
-  return  clientGeometry.height === screenGeometry.height && clientGeometry.width === screenGeometry.width;
+  
+  return clientGeometry.height === screenGeometry.height;
+};
+
+var isMaximised = function () {
+  return  isVerticallyMaximised() && isHorizontallyMaximised();
 };
 
 var SmartTileUp = function () {
