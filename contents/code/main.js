@@ -60,11 +60,8 @@ var SmartTileUp = function () {
       workspace.slotWindowQuickTileTopRight();
   }
   else if(isTop())
-  {
-    console.info("YUP.");
-    workspace.slotWindowMaximize();
-  }
-};
+      workspace.slotWindowMaximize();
+  };
 
 var SmartTileDown = function () {
   if(isTop())
