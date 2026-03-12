@@ -25,7 +25,15 @@ var isBottom = function() {
 
 var isNotTiled = function () {
   return workspace.activeWindow.tile === null;
-}
+};
+
+var recordUntiledState = function () {
+  clientGeometry = workspace.activeWindow.frameGeometry;
+  untiledX = clientGeometry.x;
+  untiledY = clientGeometry.y;
+  untiledWidth = clientGeometry.width;
+  untiledHeight = clientGeometry.height;
+};
 
 var isHorizontallyMaximised = function () { 
   screenGeometry = workspace.clientArea(
