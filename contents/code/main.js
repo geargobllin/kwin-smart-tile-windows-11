@@ -57,6 +57,15 @@ var isVerticallyMaximised = function () {
   return clientGeometry.height === screenGeometry.height;
 };
 
+var returnToFloatingWindow = function () {
+  workspace.activeWindow.tile = null;
+  workspace.activeWindow.frameGeometry = { 
+    x: untiledX, 
+    y: untiledY,
+    width: untiledWidth,
+    height: untiledHeight};
+}
+
 var isMaximised = function () {
   return  isVerticallyMaximised() && isHorizontallyMaximised();
 };
