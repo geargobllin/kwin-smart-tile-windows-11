@@ -64,8 +64,8 @@ var SmartTileUp = function () {
       workspace.slotWindowQuickTileTopRight();
   }
   else if(isTop())
-      workspace.slotWindowMaximize();
-  };
+    workspace.slotWindowMaximize();
+};
 
 var SmartTileDown = function () {
   if(isTop())
@@ -85,7 +85,9 @@ var SmartTileDown = function () {
 };
 
 var SmartTileLeft = function () {
-  if(isMaximised())
+  if(isNotTiled())
+    workspace.slotWindowQuickTileLeft();
+  else if(isMaximised())
     workspace.slotWindowQuickTileLeft();
   else if(isRight())
   {
@@ -95,13 +97,13 @@ var SmartTileLeft = function () {
       workspace.slotWindowQuickTileTopLeft();
     else if(isBottom())
       workspace.slotWindowQuickTileBottomLeft();
-    else
-      workspace.slotWindowQuickTileLeft();
   }
 };
 
 var SmartTileRight = function () {
-  if(isMaximised())
+  if(isNotTiled())
+    workspace.slotWindowQuickTileLeft();
+  else if(isMaximised())
     workspace.slotWindowQuickTileRight();
   else if(isLeft())
   {
@@ -111,8 +113,6 @@ var SmartTileRight = function () {
       workspace.slotWindowQuickTileTopRight();
     else if(isBottom())
       workspace.slotWindowQuickTileBottomRight();
-    else
-      workspace.slotWindowQuickTileRight();
   }
 };
 
