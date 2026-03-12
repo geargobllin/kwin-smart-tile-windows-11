@@ -1,4 +1,35 @@
-var isMaximised = function () {
+var isLeft = function() {
+  tileGeometry = workspace.activeWindow.tile?.relativeGeometry;
+  return tileGeometry.x === 0 && tileGeometry.width === 0.5;
+};
+
+var isRight = function() {
+  tileGeometry = workspace.activeWindow.tile?.relativeGeometry;
+  return tileGeometry.x === 0.5 && tileGeometry.width === 0.5;
+};
+
+var isTop = function() {
+  tileGeometry = workspace.activeWindow.tile?.relativeGeometry;
+  return tileGeometry.y === 0 && tileGeometry.height === 0.5;
+};
+
+var isBottom = function() {
+  tileGeometry = workspace.activeWindow.tile?.relativeGeometry;
+  return tileGeometry.y === 0.5 && tileGeometry.height === 0.5;
+};
+
+var isHorizontallyMaximised = function () { 
+  screenGeometry = workspace.clientArea(
+        KWin.PlacementArea,
+        workspace.activeScreen,
+        workspace.currentDesktop
+      );
+  clientGeometry = workspace.activeWindow.frameGeometry;
+
+  return clientGeometry.width === screenGeometry.width;
+};
+
+var isVerticallyMaximised = function () {
   screenGeometry = workspace.clientArea(
       KWin.PlacementArea,
       workspace.activeScreen,
