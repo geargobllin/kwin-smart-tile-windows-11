@@ -18,6 +18,10 @@ var isBottom = function() {
   return tileGeometry.y === 0.5 && tileGeometry.height === 0.5;
 };
 
+var isNotTiled = function () {
+  return workspace.activeWindow.tile === null;
+}
+
 var isHorizontallyMaximised = function () { 
   screenGeometry = workspace.clientArea(
         KWin.PlacementArea,
