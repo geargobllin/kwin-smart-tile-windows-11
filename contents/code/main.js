@@ -89,8 +89,7 @@ var SmartTileDown = function () {
   if(isTop()) {
     workspace.slotWindowQuickTileBottom();
   }
-  else if(isVerticallyMaximised())
-  {
+  else if(isVerticallyMaximised()) {
     if(isLeft())
       workspace.slotWindowQuickTileBottomLeft();
     else if(isRight())
@@ -99,14 +98,18 @@ var SmartTileDown = function () {
 };
 
 var SmartTileLeft = function () {
-  if(isNotTiled())
+  if(isNotTiled()) {
+    recordUntiledState();
     workspace.slotWindowQuickTileLeft();
-  else if(isMaximised())
+  }
+  else if(isMaximised()) {
     workspace.slotWindowQuickTileLeft();
+  }
   else if(isRight())
   {
-    if(isVerticallyMaximised())
-      workspace.slotWindowQuickTileLeft();
+    if(isVerticallyMaximised()) {
+      returnToFloatingWindow();
+    }
     else if(isTop())
       workspace.slotWindowQuickTileTopLeft();
     else if(isBottom())
@@ -115,14 +118,16 @@ var SmartTileLeft = function () {
 };
 
 var SmartTileRight = function () {
-  if(isNotTiled())
+  if(isNotTiled()) {
+    recordUntiledState();
     workspace.slotWindowQuickTileRight();
+  }
   else if(isMaximised())
     workspace.slotWindowQuickTileRight();
   else if(isLeft())
   {
     if(isVerticallyMaximised())
-      workspace.slotWindowQuickTileRight();
+      returnToFloatingWindow();
     else if(isTop())
       workspace.slotWindowQuickTileTopRight();
     else if(isBottom())
