@@ -71,6 +71,17 @@ var SmartTileLeft = function () {
 var SmartTileRight = function () {
   if(isMaximised())
     workspace.slotWindowQuickTileRight();
+  else if(isLeft())
+  {
+    if(isVerticallyMaximised())
+      workspace.slotWindowQuickTileRight();
+    else if(isTop())
+      workspace.slotWindowQuickTileTopRight();
+    else if(isBottom())
+      workspace.slotWindowQuickTileBottomRight();
+    else
+      workspace.slotWindowQuickTileRight();
+  }
 };
 
 var HelloWorld = function () {
