@@ -71,12 +71,8 @@ var isMaximised = function () {
 };
 
 var SmartTileUp = function () {
-  if(isBottom())
-  {
-    if(isLeft())
-      workspace.slotWindowQuickTileLeft();
-    else if(isRight())
-      workspace.slotWindowQuickTileRight();
+  if(isBottom()) {
+    workspace.slotWindowQuickTileTop();
   }
   else if(isVerticallyMaximised())
   {
@@ -90,12 +86,8 @@ var SmartTileUp = function () {
 };
 
 var SmartTileDown = function () {
-  if(isTop())
-  {
-    if(isLeft())
-      workspace.slotWindowQuickTileLeft();
-    else if(isRight())
-      workspace.slotWindowQuickTileRight();
+  if(isTop()) {
+    workspace.slotWindowQuickTileBottom();
   }
   else if(isVerticallyMaximised())
   {
