@@ -67,7 +67,20 @@ var SmartTileUp = function () {
 };
 
 var SmartTileDown = function () {
-
+  if(isTop())
+  {
+    if(isLeft())
+      workspace.slotWindowQuickTileLeft();
+    else if(isRight())
+      workspace.slotWindowQuickTileRight();
+  }
+  else if(isVerticallyMaximised())
+  {
+    if(isLeft())
+      workspace.slotWindowQuickTileBottomLeft();
+    else if(isRight())
+      workspace.slotWindowQuickTileBottomRight();
+  }
 };
 
 var SmartTileLeft = function () {
