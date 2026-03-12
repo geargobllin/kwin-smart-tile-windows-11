@@ -84,10 +84,6 @@ var SmartTileRight = function () {
   }
 };
 
-var HelloWorld = function () {
-    console.info("Hello world");
-};
-
 var shortcutPrefix = "Smart Tile ";
 registerShortcut(
   shortcutPrefix + "Up",
@@ -112,11 +108,4 @@ registerShortcut(
   shortcutPrefix + "Right",
   "Meta+Right",
   SmartTileRight
-);
-
-registerShortcut(
-    shortcutPrefix + "Hello World!",
-    shortcutPrefix + "Hello World!",
-    "Meta + A",
-    HelloWorld
 );
