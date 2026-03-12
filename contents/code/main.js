@@ -55,6 +55,17 @@ var SmartTileDown = function () {
 var SmartTileLeft = function () {
   if(isMaximised())
     workspace.slotWindowQuickTileLeft();
+  else if(isRight())
+  {
+    if(isVerticallyMaximised())
+      workspace.slotWindowQuickTileLeft();
+    else if(isTop())
+      workspace.slotWindowQuickTileTopLeft();
+    else if(isBottom())
+      workspace.slotWindowQuickTileBottomLeft();
+    else
+      workspace.slotWindowQuickTileLeft();
+  }
 };
 
 var SmartTileRight = function () {
