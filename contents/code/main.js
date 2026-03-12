@@ -102,7 +102,7 @@ var SmartTileLeft = function () {
 
 var SmartTileRight = function () {
   if(isNotTiled())
-    workspace.slotWindowQuickTileLeft();
+    workspace.slotWindowQuickTileRight();
   else if(isMaximised())
     workspace.slotWindowQuickTileRight();
   else if(isLeft())
