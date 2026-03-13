@@ -71,29 +71,40 @@ var isMaximised = function () {
 };
 
 var SmartTileUp = function () {
-  if(isBottom()) {
+  if(isNotTiled()) {
+    workspace.slotWindowMaximize();
+  }
+  else if(isBottom()) {
     workspace.slotWindowQuickTileTop();
   }
   else if(isVerticallyMaximised())
   {
-    if(isLeft())
+    if(isLeft()) {
       workspace.slotWindowQuickTileTopLeft();
-    else if(isRight())
+    }
+    else if(isRight()) {
       workspace.slotWindowQuickTileTopRight();
+    }
   }
-  else if(isTop())
+  else if(isTop()) {
     workspace.slotWindowMaximize();
+  }
 };
 
 var SmartTileDown = function () {
-  if(isTop()) {
+  if(isNotTiled()) {
+    workspace.slotWindowMinimize();
+  }
+  else if(isTop()) {
     workspace.slotWindowQuickTileBottom();
   }
   else if(isVerticallyMaximised()) {
-    if(isLeft())
+    if(isLeft()) {
       workspace.slotWindowQuickTileBottomLeft();
-    else if(isRight())
+    }
+    else if(isRight()) {
       workspace.slotWindowQuickTileBottomRight();
+    }
   }
 };
 
@@ -105,15 +116,16 @@ var SmartTileLeft = function () {
   else if(isMaximised()) {
     workspace.slotWindowQuickTileLeft();
   }
-  else if(isRight())
-  {
+  else if(isRight()) {
     if(isVerticallyMaximised()) {
       returnToFloatingWindow();
     }
-    else if(isTop())
+    else if(isTop()) {
       workspace.slotWindowQuickTileTopLeft();
-    else if(isBottom())
+    }
+    else if(isBottom()) {
       workspace.slotWindowQuickTileBottomLeft();
+    }
   }
 };
 
@@ -122,16 +134,19 @@ var SmartTileRight = function () {
     recordUntiledState();
     workspace.slotWindowQuickTileRight();
   }
-  else if(isMaximised())
+  else if(isMaximised()) {
     workspace.slotWindowQuickTileRight();
-  else if(isLeft())
-  {
-    if(isVerticallyMaximised())
+  }
+  else if(isLeft()) {
+    if(isVerticallyMaximised()) {
       returnToFloatingWindow();
-    else if(isTop())
+    }
+    else if(isTop()) {
       workspace.slotWindowQuickTileTopRight();
-    else if(isBottom())
+    }
+    else if(isBottom()) {
       workspace.slotWindowQuickTileBottomRight();
+    }
   }
 };
 
