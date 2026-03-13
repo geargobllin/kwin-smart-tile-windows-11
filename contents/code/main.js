@@ -72,13 +72,13 @@ var isMaximised = function () {
 
 var SmartTileUp = function () {
   if(isNotTiled()) {
+    recordUntiledState();
     workspace.slotWindowMaximize();
   }
   else if(isBottom()) {
     workspace.slotWindowQuickTileTop();
   }
-  else if(isVerticallyMaximised())
-  {
+  else if(isVerticallyMaximised()) {
     if(isLeft()) {
       workspace.slotWindowQuickTileTopLeft();
     }
@@ -86,14 +86,12 @@ var SmartTileUp = function () {
       workspace.slotWindowQuickTileTopRight();
     }
   }
-  else if(isTop()) {
-    workspace.slotWindowMaximize();
-  }
 };
 
 var SmartTileDown = function () {
-  if(isNotTiled()) {
-    workspace.slotWindowMinimize();
+
+  if(isVerticallyMaximised() && isHorizontallyMaximised()) {
+    returnToFloatingWindow();
   }
   else if(isTop()) {
     workspace.slotWindowQuickTileBottom();
